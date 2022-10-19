@@ -1,0 +1,5 @@
+name: quarkus-pact-provider
+title: Quarkus Pact Provider
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
