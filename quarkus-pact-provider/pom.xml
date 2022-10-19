@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>io.quarkiverse</groupId>
-    <artifactId>quarkiverse-parent</artifactId>
-    <version>10</version>
+    <groupId>io.quarkiverse.pact</groupId>
+    <artifactId>quarkus-pact-parent</artifactId>
+    <version>999-SNAPSHOT</version>
   </parent>
   <artifactId>quarkus-pact-provider-parent</artifactId>
   <version>999-SNAPSHOT</version>
