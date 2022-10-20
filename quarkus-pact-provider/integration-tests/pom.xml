@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
@@ -10,12 +10,13 @@
   <artifactId>quarkus-pact-provider-integration-tests</artifactId>
   <name>Quarkus Pact Provider - Integration Tests</name>
   <properties>
-    <skipITs>true</skipITs>
+    <!-- These integration tests are where we discover most of the issues, so we want to default to running them -->
+    <skipITs>false</skipITs>
   </properties>
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy</artifactId>
+      <artifactId>quarkus-resteasy-jsonb</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkiverse.pact</groupId>
@@ -28,12 +29,27 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-test-maven</artifactId>
+      <version>${quarkus.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources-filtered</directory>
+        <filtering>true</filtering>
+      </testResource>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
     <plugins>
       <plugin>
         <groupId>io.quarkus</groupId>

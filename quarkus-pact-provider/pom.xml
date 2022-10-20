@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
@@ -21,7 +21,6 @@
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus.version>2.13.3.Final</quarkus.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -34,6 +33,16 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <dependencies>
+    <!-- This seems to be needed here, and adding it just in the runtime module, or even in both deployment and runtime,
+    causes tests to fail with NoSuchMethodError: 'javax.json.stream.JsonGenerator javax.json.stream.JsonGenerator.writeKey(java.lang.String)
+     I would LOVE to understand why. -->
+    <dependency>
+      <groupId>au.com.dius.pact.provider</groupId>
+      <artifactId>junit5</artifactId>
+      <version>${pact.version}</version>
+    </dependency>
+  </dependencies>
   <build>
     <pluginManagement>
       <plugins>
