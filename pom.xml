@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse</groupId>
@@ -15,4 +16,9 @@
     <module>quarkus-pact-provider</module>
     <!-- <module>quarkus-pact-consumer</module> -->
   </modules>
+  <properties>
+    <quarkus.version>2.13.3.Final</quarkus.version>
+    <!-- Why not the latest version of pact? See https://github.com/quarkiverse/quarkus-pact/issues/1 -->
+    <pact.version>4.3.14</pact.version>
+  </properties>
 </project>
