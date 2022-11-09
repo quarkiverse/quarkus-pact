@@ -19,6 +19,6 @@
   <properties>
     <quarkus.version>2.13.3.Final</quarkus.version>
     <!-- Why not the latest version of pact? See https://github.com/quarkiverse/quarkus-pact/issues/1 -->
-    <pact.version>4.3.14</pact.version>
+    <pact.version>4.3.16</pact.version>
   </properties>
 </project>
