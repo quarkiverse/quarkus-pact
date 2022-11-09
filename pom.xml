@@ -17,7 +17,7 @@
     <!-- <module>quarkus-pact-consumer</module> -->
   </modules>
   <properties>
-    <quarkus.version>2.13.3.Final</quarkus.version>
+    <quarkus.version>2.14.0.Final</quarkus.version>
     <!-- Why not the latest version of pact? See https://github.com/quarkiverse/quarkus-pact/issues/1 -->
     <pact.version>4.3.17</pact.version>
   </properties>
