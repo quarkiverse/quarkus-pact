@@ -1,20 +1,18 @@
 package io.quarkiverse.pact.it;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.awaitility.Awaitility.await;
+import io.quarkus.maven.it.RunAndCheckMojoTestBase;
+import io.quarkus.maven.it.continuoustesting.ContinuousTestingMavenTestUtils;
+import io.quarkus.test.devmode.util.DevModeTestUtils;
+import org.apache.maven.shared.invoker.MavenInvocationException;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
 import java.io.FileNotFoundException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.maven.shared.invoker.MavenInvocationException;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
-
-import io.quarkus.maven.it.RunAndCheckMojoTestBase;
-import io.quarkus.maven.it.continuoustesting.ContinuousTestingMavenTestUtils;
-import io.quarkus.test.devmode.util.DevModeTestUtils;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.awaitility.Awaitility.await;
 
 /**
  * Because Pact uses Kotlin under the covers, we see different behaviour
@@ -47,7 +45,6 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
         assertThat(json).containsIgnoringCase("colour");
     }
 
-    @Disabled // See https://github.com/quarkiverse/quarkus-pact/issues/11
     @Test
     public void testThatTheTestsPassed() throws MavenInvocationException, FileNotFoundException {
         //we also check continuous testing
@@ -62,7 +59,9 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
 
         ContinuousTestingMavenTestUtils testingTestUtils = new ContinuousTestingMavenTestUtils();
         ContinuousTestingMavenTestUtils.TestStatus results = testingTestUtils.waitForNextCompletion();
-        Assertions.assertEquals(1, results.getTestsPassed());
+        Assertions.assertEquals(2, results.getTestsPassed());
+        Assertions.assertEquals(0, results.getTestsFailed());
+
     }
 
 }

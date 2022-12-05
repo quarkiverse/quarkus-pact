@@ -15,6 +15,10 @@
       <artifactId>quarkus-arc</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-kotlin</artifactId>
+    </dependency>
+    <dependency>
       <groupId>au.com.dius.pact.provider</groupId>
       <artifactId>junit5</artifactId>
       <version>${pact.version}</version>
@@ -26,6 +30,23 @@
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-extension-maven-plugin</artifactId>
         <version>${quarkus.version}</version>
+        <configuration>
+          <parentFirstArtifacts>
+            <parentFirstArtifact>io.github.microutils:kotlin-logging-jvm</parentFirstArtifact>
+            <parentFirstArtifact>com.michael-bull.kotlin-result:kotlin-result-jvm</parentFirstArtifact>
+            <parentFirstArtifact>io.ktor:ktor-http-jvm</parentFirstArtifact>
+            <!-- Here we go back into Java code from the Kotlin code -->
+            <parentFirstArtifact>org.apache.tika:tika-core</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.httpcomponents.core5:httpcore5</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.httpcomponents.client5:httpclient5</parentFirstArtifact>
+            <parentFirstArtifact>com.github.ajalt:mordant</parentFirstArtifact>
+            <parentFirstArtifact>au.com.dius.pact.core:matchers</parentFirstArtifact>
+            <parentFirstArtifact>io.pact.plugin.driver:core</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.commons:commons-collections4</parentFirstArtifact>
+            <parentFirstArtifact>com.github.zafarkhaja:java-semver</parentFirstArtifact>
+            <parentFirstArtifact>io.github.java-diff-utils:java-diff-utils</parentFirstArtifact>
+          </parentFirstArtifacts>
+        </configuration>
         <executions>
           <execution>
             <phase>compile</phase>
