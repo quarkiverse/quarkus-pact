@@ -45,6 +45,9 @@
       <testResource>
         <directory>src/test/resources-filtered</directory>
         <filtering>true</filtering>
+        <excludes>
+          <exclude>**/target/**</exclude> <!-- Target folders sometimes creep in when manually executing locally-->
+        </excludes>
       </testResource>
       <testResource>
         <directory>src/test/resources</directory>
