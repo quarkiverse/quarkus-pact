@@ -1,9 +1,4 @@
-package io.quarkiverse.pact.devmodetest.farm.house;
-
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.TestTemplate;
-import org.junit.jupiter.api.extension.ExtendWith;
+package io.quarkiverse.pact.devmodetest.farm;
 
 import au.com.dius.pact.provider.junit5.HttpTestTarget;
 import au.com.dius.pact.provider.junit5.PactVerificationContext;
@@ -11,6 +6,10 @@ import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvide
 import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
 import io.quarkus.test.junit.QuarkusTest;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 @Provider("Farm")
 @PactFolder("pacts")
@@ -30,5 +29,4 @@ public class FarmContractTest {
     void pactVerificationTestTemplate(PactVerificationContext context) {
         context.verifyInteraction();
     }
-
 }
