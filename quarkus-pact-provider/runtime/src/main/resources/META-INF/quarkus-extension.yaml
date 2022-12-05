@@ -1,9 +1,9 @@
 name: Pact Provider
-#description: Do something useful.
+description: Support for running a pact provider in Quarkus, including in Quarkus dev mode.
 metadata:
-#  keywords:
-#    - pact-provider
-#  guide: https://quarkiverse.github.io/quarkiverse-docs/pact-provider/dev/
-#  categories:
-#    - "miscellaneous"
-#  status: "preview"
+  keywords:
+    - contract-testing, pact
+  #  guide: https://quarkiverse.github.io/quarkiverse-docs/pact-provider/dev/
+  categories:
+    - "testing"
+  status: "experimental"
