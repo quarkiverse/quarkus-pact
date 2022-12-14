@@ -4,10 +4,10 @@
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
     <artifactId>quarkus-pact-parent</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
   </parent>
   <artifactId>quarkus-pact-provider-parent</artifactId>
-  <version>0.1</version>
+  <version>0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Quarkus Pact Provider - Parent</name>
   <modules>
