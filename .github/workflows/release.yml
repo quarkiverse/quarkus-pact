@@ -63,8 +63,8 @@ jobs:
         run: |
           git checkout ${{steps.metadata.outputs.current-version}}
           mvn -B clean install -DskipTests -DskipITs
-          if ! git diff --quiet docs/modules/ROOT/pages/includes/attributes.adoc; then
-            git add docs/modules/ROOT/pages/includes/attributes.adoc
+          if ! git diff --quiet */docs/modules/ROOT/pages/includes/attributes.adoc; then
+            git add */docs/modules/ROOT/pages/includes/attributes.adoc
             git commit -m "Update stable version for documentation"
             # Move the tag after inclusion of documentation adjustments
             git tag -f ${{steps.metadata.outputs.current-version}}
