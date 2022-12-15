@@ -1,11 +1,11 @@
 # quarkus-pact
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-blue.svg?style=plastic)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 _Pact Support for Quarkus_
 
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-provider?logo=apache-maven&style=for-the-badge)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-provider)
+[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-provider?logo=apache-maven&style=for-the-badge&color=blue&style=plastic)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-provider)
 
 Pact is a polyglot contract testing framework. You can read more about it here: https://pact.io/
 
@@ -31,5 +31,7 @@ To get started, add the dependency:
 ### Continuous testing/dev mode
 
 This extension allows Pact contract tests to run with `mvn quarkus:dev` and `mvn quarkus:test`.
+
+## Contributions
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
