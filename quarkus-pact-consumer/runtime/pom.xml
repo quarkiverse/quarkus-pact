@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.quarkiverse.pact</groupId>
+    <artifactId>quarkus-pact-consumer-parent</artifactId>
+    <version>0.2-SNAPSHOT</version>
+  </parent>
+  <artifactId>quarkus-pact-consumer</artifactId>
+  <name>Quarkus Pact Consumer - Runtime</name>
+  <dependencies>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-kotlin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>au.com.dius.pact.consumer</groupId>
+      <artifactId>junit5</artifactId>
+      <version>${pact.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-extension-maven-plugin</artifactId>
+        <version>${quarkus.version}</version>
+        <configuration>
+          <parentFirstArtifacts>
+            <parentFirstArtifact>io.github.microutils:kotlin-logging-jvm</parentFirstArtifact>
+            <parentFirstArtifact>com.michael-bull.kotlin-result:kotlin-result-jvm</parentFirstArtifact>
+            <parentFirstArtifact>io.ktor:ktor-http-jvm</parentFirstArtifact>
+            <!-- Here we go back into Java code from the Kotlin code -->
+            <parentFirstArtifact>org.apache.tika:tika-core</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.httpcomponents.core5:httpcore5</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.httpcomponents.client5:httpclient5</parentFirstArtifact>
+            <parentFirstArtifact>com.github.ajalt:mordant</parentFirstArtifact>
+            <parentFirstArtifact>au.com.dius.pact.core:matchers</parentFirstArtifact>
+            <parentFirstArtifact>io.pact.plugin.driver:core</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.commons:commons-collections4</parentFirstArtifact>
+            <parentFirstArtifact>com.github.zafarkhaja:java-semver</parentFirstArtifact>
+            <parentFirstArtifact>io.github.java-diff-utils:java-diff-utils</parentFirstArtifact>
+          </parentFirstArtifacts>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>extension-descriptor</goal>
+            </goals>
+            <configuration>
+              <deployment>${project.groupId}:${project.artifactId}-deployment:${project.version}</deployment>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>io.quarkus</groupId>
+              <artifactId>quarkus-extension-processor</artifactId>
+              <version>${quarkus.version}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

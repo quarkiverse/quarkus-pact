@@ -1,0 +1,9 @@
+name: Pact consumer
+description: Support for running a pact consumer in Quarkus, including in Quarkus dev mode.
+metadata:
+  keywords:
+    - contract-testing, pact
+  #  guide: https://quarkiverse.github.io/quarkiverse-docs/pact-consumer/dev/
+  categories:
+    - "testing"
+  status: "experimental"
