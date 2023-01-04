@@ -1,6 +1,6 @@
 # Quarkus Pact Provider
 
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse/quarkus-pact-provider?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse/quarkus-pact-provider)
+[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-provider?logo=apache-maven&style=for-the-badge&color=blue&style=plastic)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-provider)
 
 # Running the integration test project
 

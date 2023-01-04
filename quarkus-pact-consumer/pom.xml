@@ -7,25 +7,15 @@
     <artifactId>quarkus-pact-parent</artifactId>
     <version>0.2-SNAPSHOT</version>
   </parent>
-  <artifactId>quarkus-pact-provider-parent</artifactId>
+  <artifactId>quarkus-pact-consumer-parent</artifactId>
   <version>0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Quarkus Pact Provider - Parent</name>
+  <name>Quarkus Pact Consumer - Parent</name>
   <modules>
     <module>deployment</module>
     <module>runtime</module>
   </modules>
 
-  <dependencies>
-    <!-- This seems to be needed here, and adding it just in the runtime module, or even in both deployment and runtime,
-    causes tests to fail with NoSuchMethodError: 'javax.json.stream.JsonGenerator javax.json.stream.JsonGenerator.writeKey(java.lang.String)
-     I would LOVE to understand why. -->
-    <dependency>
-      <groupId>au.com.dius.pact.provider</groupId>
-      <artifactId>junit5</artifactId>
-      <version>${pact.version}</version>
-    </dependency>
-  </dependencies>
   <build>
     <pluginManagement>
       <plugins>
