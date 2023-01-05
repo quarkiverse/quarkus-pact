@@ -15,17 +15,7 @@
     <module>deployment</module>
     <module>runtime</module>
   </modules>
-
-  <dependencies>
-    <!-- This seems to be needed here, and adding it just in the runtime module, or even in both deployment and runtime,
-    causes tests to fail with NoSuchMethodError: 'javax.json.stream.JsonGenerator javax.json.stream.JsonGenerator.writeKey(java.lang.String)
-     I would LOVE to understand why. -->
-    <dependency>
-      <groupId>au.com.dius.pact.provider</groupId>
-      <artifactId>junit5</artifactId>
-      <version>${pact.version}</version>
-    </dependency>
-  </dependencies>
+  
   <build>
     <pluginManagement>
       <plugins>
