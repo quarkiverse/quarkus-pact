@@ -2,3 +2,5 @@
 **/target/*
 **/*dylib
 /quarkus-pact-parent.iml
+/docs/quarkus-pact-docs.iml
+*.iml
