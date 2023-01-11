@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.maven.shared.invoker.MavenInvocationException;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
@@ -25,6 +26,8 @@ import io.quarkus.test.devmode.util.DevModeTestUtils;
  * mvn install -Dit.test=DevMojoIT#methodName
  */
 @DisabledIfSystemProperty(named = "quarkus.test.native", matches = "true")
+// See https://github.com/quarkiverse/quarkus-pact/issues/28; for dev mode tests, the extension scope cannot be test
+@Disabled
 public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
 
     protected void runAndCheck(String... options) throws MavenInvocationException, FileNotFoundException {
