@@ -1,5 +1,6 @@
 package io.quarkiverse.pact.it;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,9 +20,12 @@ import io.quarkus.test.junit.QuarkusTest;
 // This test runs not-with continuous testing or dev mode
 public class NormalModeContractIT {
 
+    @ConfigProperty(name = "quarkus.http.test-port")
+    int quarkusPort;
+
     @BeforeEach
     void before(PactVerificationContext context) {
-        context.setTarget(new HttpTestTarget("localhost", 8081));
+        context.setTarget(new HttpTestTarget("localhost", quarkusPort));
     }
 
     @TestTemplate
