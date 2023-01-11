@@ -52,7 +52,6 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
         testDir = initProject("projects/happy-farm", "projects/happy-farm-processed");
         runAndCheck();
 
-        // test that we don't get multiple instances of a resource when loading from the ClassLoader
         await()
                 .pollDelay(100, TimeUnit.MILLISECONDS)
                 .atMost(5, TimeUnit.SECONDS)
