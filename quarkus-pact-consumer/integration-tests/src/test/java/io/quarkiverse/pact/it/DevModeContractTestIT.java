@@ -30,11 +30,6 @@ import io.quarkus.test.devmode.util.DevModeTestUtils;
 @DisabledIfSystemProperty(named = "quarkus.test.native", matches = "true")
 public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
 
-    protected void runAndCheck(String... options) throws MavenInvocationException, FileNotFoundException {
-        // To avoid clashes with other tests, we use a non-default port
-        runAndCheck(true);
-    }
-
     protected void runAndCheck(boolean performCompile, String... options)
             throws MavenInvocationException, FileNotFoundException {
         run(performCompile, options);
