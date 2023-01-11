@@ -46,7 +46,7 @@
       <groupId>io.quarkiverse.pact</groupId>
       <artifactId>quarkus-pact-consumer</artifactId>
       <version>${project.version}</version>
-      <!-- <scope>test</scope>--> <!-- See https://github.com/quarkiverse/quarkus-pact/issues/28; for dev mode tests, the scope cannot be test -->
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
