@@ -3,8 +3,7 @@
 
 _Pact Support for Quarkus_
 
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-provider?logo=apache-maven&style=for-the-badge&color=blue&style=plastic)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-provider)
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-consumer?logo=apache-maven&style=for-the-badge&color=blue&style=plastic)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-consumer)
+provider: [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-provider?logo=apache-maven&style=for-the-badge&color=blue&style=plastic)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-provider) &emsp; consumer: [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact/quarkus-pact-consumer?logo=apache-maven&style=for-the-badge&color=blue&style=plastic)](https://search.maven.org/artifact/io.quarkiverse.pact/quarkus-pact-consumer)
 
 Pact is a polyglot contract testing framework. You can read more about it here: https://pact.io/
 This extension ensures Pact works will with Quarkus applications, including with continuous testing.
