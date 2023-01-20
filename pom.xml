@@ -17,7 +17,7 @@
     <module>docs</module>
   </modules>
   <properties>
-    <quarkus.version>2.15.3.Final</quarkus.version>
+    <quarkus.version>2.16.0.Final</quarkus.version>
     <pact.version>4.3.17</pact.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.release>11</maven.compiler.release>
