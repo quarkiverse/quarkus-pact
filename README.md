@@ -42,6 +42,17 @@ To get started, add the dependency:
 
 This extension allows Pact contract tests to run with `mvn quarkus:dev` and `mvn quarkus:test`.
 
+## Samples and resources
+
+- [Introduction to Pact](https://docs.pact.io/)
+- How to use Pact's [Java library](https://docs.pact.io/implementation_guides/jvm)
+- [Quarkus Superheroes sample](https://github.com/quarkusio/quarkus-super-heroes)
+- [Eric Deandrea](https://developers.redhat.com/author/eric-deandrea) and [Holly Cummins](https://hollycummins.com)
+  recently spoke about contract testing with Pact and used the Quarkus Superheroes for their
+  demos. [Watch the replay](https://www.youtube.com/watch?v=vYwkDPrzqV8)
+  and [view the slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) if you'd like to learn
+  more about contract testing.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
