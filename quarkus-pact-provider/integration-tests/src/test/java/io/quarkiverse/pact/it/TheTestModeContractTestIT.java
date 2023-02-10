@@ -31,7 +31,7 @@ import io.quarkus.runtime.LaunchMode;
  * Changing this class so that the name doesn't start with Test works around the issue.
  */
 @DisabledIfSystemProperty(named = "quarkus.test.native", matches = "true")
-public class TtestModeContractTestIT extends RunAndCheckMojoTestBase {
+public class TheTestModeContractTestIT extends RunAndCheckMojoTestBase {
 
     @Override
     protected LaunchMode getDefaultLaunchMode() {
