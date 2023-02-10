@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 
 import org.apache.maven.shared.invoker.MavenInvocationException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
@@ -29,7 +28,6 @@ import io.quarkus.test.devmode.util.DevModeTestUtils;
  * mvn install -Dit.test=DevMojoIT#methodName
  */
 @DisabledIfSystemProperty(named = "quarkus.test.native", matches = "true")
-@Disabled
 public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
 
     protected void runAndCheck(boolean performCompile, String... options)
