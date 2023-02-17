@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
@@ -31,6 +32,15 @@
         <version>${quarkus.version}</version>
         <configuration>
           <parentFirstArtifacts>
+            <parentFirstArtifact>au.com.dius.pact.provider:junit5</parentFirstArtifact>
+            <parentFirstArtifact>org.jetbrains.kotlin:kotlin-stdlib-jdk8</parentFirstArtifact>
+            <parentFirstArtifact>org.jetbrains.kotlin:kotlin-stdlib-jdk7</parentFirstArtifact>
+            <parentFirstArtifact>org.jetbrains.kotlin:kotlin-reflect</parentFirstArtifact>
+            <parentFirstArtifact>org.jetbrains.kotlin:kotlin-stdlib</parentFirstArtifact>
+            <parentFirstArtifact>org.jetbrains.kotlin:kotlin-stdlib-common</parentFirstArtifact>
+            <parentFirstArtifact>org.jetbrains:annotations</parentFirstArtifact>
+            <parentFirstArtifact>au.com.dius.pact:provider</parentFirstArtifact>
+            <parentFirstArtifact>au.com.dius.pact.core:support</parentFirstArtifact>
             <parentFirstArtifact>io.github.microutils:kotlin-logging-jvm</parentFirstArtifact>
             <parentFirstArtifact>com.michael-bull.kotlin-result:kotlin-result-jvm</parentFirstArtifact>
             <parentFirstArtifact>io.ktor:ktor-http-jvm</parentFirstArtifact>
@@ -40,6 +50,8 @@
             <parentFirstArtifact>org.apache.httpcomponents.client5:httpclient5</parentFirstArtifact>
             <parentFirstArtifact>com.github.ajalt:mordant</parentFirstArtifact>
             <parentFirstArtifact>au.com.dius.pact.core:matchers</parentFirstArtifact>
+            <parentFirstArtifact>au.com.dius.pact.core:model</parentFirstArtifact>
+            <parentFirstArtifact>au.com.dius.pact.core:pactbroker</parentFirstArtifact>
             <parentFirstArtifact>io.pact.plugin.driver:core</parentFirstArtifact>
             <parentFirstArtifact>org.apache.commons:commons-collections4</parentFirstArtifact>
             <parentFirstArtifact>com.github.zafarkhaja:java-semver</parentFirstArtifact>

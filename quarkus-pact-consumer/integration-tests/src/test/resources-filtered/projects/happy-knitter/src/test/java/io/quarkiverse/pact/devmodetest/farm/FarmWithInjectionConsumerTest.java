@@ -1,5 +1,16 @@
 package io.quarkiverse.pact.devmodetest.farm;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import au.com.dius.pact.consumer.MockServer;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
@@ -11,16 +22,7 @@ import io.quarkiverse.pact.testapp.AlpacaService;
 import io.quarkiverse.pact.testapp.ConsumerAlpaca;
 import io.quarkiverse.pact.testapp.Knitter;
 import io.quarkus.test.junit.QuarkusTest;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-import javax.inject.Inject;
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import jakarta.inject.Inject;
 
 @ExtendWith(PactConsumerTestExt.class)
 @PactTestFor(providerName = "farm", port = "8085")
@@ -80,6 +82,8 @@ public class FarmWithInjectionConsumerTest {
     }
 
     @Test
+    @Disabled // With Quarkus 3, test methods cannot directly access Pact classes, because they are in different classloaders. See https://github.com/quarkiverse/quarkus-pact/issues/73
+    // The good news is there are very few use cases where test code should be doing parameter injection of the mock server.
     public void testPortIsCorrect(MockServer mockServer) {
         // If we have a test, pact assumes we will call it and validates there was a call
         ConsumerAlpaca alpaca = alpacaService.getByName("fluffy");
