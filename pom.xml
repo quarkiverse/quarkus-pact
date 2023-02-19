@@ -37,4 +37,18 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <profiles>
+    <profile>
+      <id>it</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>!true</value>
+        </property>
+      </activation>
+      <modules>
+        <module>cross-extension-integration-tests</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>
