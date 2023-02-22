@@ -8,7 +8,8 @@ provider: [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.pact
 Pact is a polyglot contract testing framework. You can read more about it here: https://pact.io/
 This extension ensures Pact works will with Quarkus applications, including with continuous testing.
 
-To get started, add the dependency:
+
+To get started, add the dependencies. Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2. 
 
 ### Provider tests
 
