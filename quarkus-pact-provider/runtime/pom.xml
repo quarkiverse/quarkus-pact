@@ -55,6 +55,7 @@
             <parentFirstArtifact>org.apache.commons:commons-collections4</parentFirstArtifact>
             <parentFirstArtifact>com.github.zafarkhaja:java-semver</parentFirstArtifact>
             <parentFirstArtifact>io.github.java-diff-utils:java-diff-utils</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.commons:commons-text</parentFirstArtifact>
           </parentFirstArtifacts>
         </configuration>
         <executions>
