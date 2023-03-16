@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
-    <artifactId>quarkus-pact-consumer-parent</artifactId>
+    <artifactId>quarkus-pact-parent</artifactId>
     <version>1.1-SNAPSHOT</version>
   </parent>
-  <artifactId>quarkus-pact-consumer-integration-tests</artifactId>
-  <name>Quarkus Pact Consumer - Integration Tests</name>
+  <artifactId>cross-extension-integration-tests</artifactId>
+  <name>Quarkus Pact - Cross-extension Integration Tests</name>
   <properties>
     <!-- These integration tests are where we discover most of the issues, so we want to default to running them -->
     <skipITs>false</skipITs>
@@ -19,7 +20,7 @@
     </dependency>
     <dependency>
       <groupId>io.quarkiverse.pact</groupId>
-      <artifactId>quarkus-pact-consumer</artifactId>
+      <artifactId>quarkus-pact-provider</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -31,6 +32,11 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-test-maven</artifactId>
       <version>${quarkus.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

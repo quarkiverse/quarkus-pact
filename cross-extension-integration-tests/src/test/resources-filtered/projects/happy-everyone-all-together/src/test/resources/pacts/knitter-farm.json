@@ -1,0 +1,45 @@
+{
+  "consumer": {
+    "name": "Knitter"
+  },
+  "provider": {
+    "name": "Farm"
+  },
+  "interactions": [
+    {
+      "description": "a request for the alpaca",
+      "request": {
+        "method": "GET",
+        "path": "/alpaca",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "colour": "black",
+          "name": "floppy"
+        },
+        "matchingRules": {
+          "$.body.colour": {
+            "match": "regex",
+            "regex": "^(black|brown|white)$"
+          },
+          "$.body.name": {
+            "match": "regex",
+            "regex": "^fl.*$"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
