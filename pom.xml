@@ -18,7 +18,7 @@
   </modules>
   <properties>
     <quarkus.version>3.0.0.Beta1</quarkus.version>
-    <pact.version>4.5.4</pact.version>
+    <pact.version>4.5.5</pact.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
