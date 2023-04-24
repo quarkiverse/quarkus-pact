@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
@@ -56,6 +57,9 @@
             <parentFirstArtifact>com.github.zafarkhaja:java-semver</parentFirstArtifact>
             <parentFirstArtifact>io.github.java-diff-utils:java-diff-utils</parentFirstArtifact>
             <parentFirstArtifact>org.apache.commons:commons-text</parentFirstArtifact>
+            <!-- This is not needed for basic function, but it resolves a stack trace in continuous testing
+            that happens when PACT_DO_NOT_TRACK is not set to true -->
+            <parentFirstArtifact>org.apache.httpcomponents.client5:httpclient5-fluent</parentFirstArtifact>
           </parentFirstArtifacts>
         </configuration>
         <executions>
