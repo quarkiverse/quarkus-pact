@@ -18,7 +18,7 @@ To get started, add the dependencies. Choose a 1.x version for Quarkus 3, and a 
       <groupId>io.quarkiverse.pact</groupId>
       <artifactId>quarkus-pact-provider</artifactId>
       <version>LATEST</version>
-      <!-- <scope>test</scope>--> <!-- See https://github.com/quarkiverse/quarkus-pact/issues/28; for dev mode tests, the scope cannot be test -->
+      <scope>test</scope>
     </dependency>
 ```
 
@@ -29,13 +29,9 @@ To get started, add the dependencies. Choose a 1.x version for Quarkus 3, and a 
       <groupId>io.quarkiverse.pact</groupId>
       <artifactId>quarkus-pact-consumer</artifactId>
       <version>LATEST</version>
-      <!-- <scope>test</scope>--> <!-- See https://github.com/quarkiverse/quarkus-pact/issues/28; for dev mode tests, the scope cannot be test -->
+      <scope>test</scope>
     </dependency>
 ```
-
-## Limitations
-
-- Pact tests do not run in dev mode if the dependency scope is `test` (which would be the most natural scope)
 
 ## Features
 
