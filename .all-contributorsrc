@@ -15,6 +15,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "michalvavrik",
+      "name": "Michal Vavřík",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43821672?v=4",
+      "profile": "https://github.com/michalvavrik",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
