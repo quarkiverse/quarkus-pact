@@ -1,3 +1,5 @@
+:project-version: 1.0.0.Final
+:pact-version: 4.5.6
 :project-version: 0.2
 
 :examples-dir: ./../examples/
