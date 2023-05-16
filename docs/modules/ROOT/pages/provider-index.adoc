@@ -1,0 +1,56 @@
+= Quarkus Pact Provider
+
+include::./includes/attributes.adoc[]
+
+https://pact.io/[Pact] is a polyglot contract testing framework.
+This extension ensures Pact provider libraries works well with Quarkus applications, including with continuous testing.
+It is based on version {pact-version} of the Pact JVM JUnit 5 library.
+
+== Installation
+
+To use this extension, add the `io.quarkiverse:quarkus-pact-provider` extension first to your build file.
+Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+    <groupId>io.quarkiverse</groupId>
+    <artifactId>quarkus-pact-provider</artifactId>
+    <version>{project-version}</version>
+    <scope>test</scope>
+</dependency>
+----
+
+== Example usage
+
+Use Pact as you https://docs.pact.io/implementation_guides/jvm/provider/junit5[normally would].
+For example, a simple provider test for REST endpoints would look like this:
+
+[source,java]
+----
+include::{examples-dir}/provider/SimpleContractTest.java[tag=include]
+----
+
+<1> Add `@Provider` annotations to the class, along with instructions where to find the pacts (a folder or a broker).
+<2> We inject Quarkus configuration.
+<3> With the injected configuration, we can tell the Pact verifier where to look for our endpoints.
+<4> Standard Pact provider boilerplate, to create a series of templated tests which run the Pact verifications.
+
+[[extension-configuration-reference]]
+== Extension Configuration Reference
+
+For the moment, Pact needs to be configured by the normal https://docs.pact.io/implementation_guides/jvm/docs/system-properties[Pact system properties].
+
+== Known limitations
+
+- `@State` methods do not not have access to the CDI context (https://github.com/quarkiverse/quarkus-pact/issues/2[GitHub issue])
+- When changing the code of classes with a `@TestTemplate`, continuous testing may not automatically retrigger (https://github.com/quarkusio/quarkus/pull/33047[Fix PR])
+
+== Samples and resources
+
+- https://docs.pact.io/[Introduction to Pact]
+- How to use Pact's https://docs.pact.io/implementation_guides/jvm[Java library]
+- https://github.com/edeandrea/pact-quarkus-wookie-carpet-demo[Sample application showing Pact testing with Quarkus]
+- https://developers.redhat.com/author/eric-deandrea[Eric Deandrea] and https://hollycummins.com[Holly Cummins]
+recently spoke about contract testing with Pact. https://www.youtube.com/watch?v=vYwkDPrzqV8[Watch the replay] and https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/[view the slides] if you'd like to learn more about contract testing.
+- The https://github.com/quarkusio/quarkus-super-heroes[Quarkus Superheroes sample] includes Pact tests

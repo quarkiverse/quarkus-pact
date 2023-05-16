@@ -1,1 +1,2 @@
-* xref:index.adoc[Quarkus Pact Provider]
+* xref:consumer-index.adoc[Pact Consumer support]
+* xref:provider-index.adoc[Pact Provider support]
