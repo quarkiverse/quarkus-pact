@@ -1,0 +1,69 @@
+= Pact Consumer
+
+include::./includes/attributes.adoc[]
+
+https://pact.io/[Pact] is a polyglot contract testing framework.
+This extension ensures Pact consumer libraries works well with Quarkus applications, including with continuous testing.
+It is based on version {pact-version} of the Pact JVM JUnit 5 library.
+
+== Installation
+
+To use this extension, add the `io.quarkiverse:quarkus-pact-consumer` extension first to your build file.
+Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
+
+== Installation
+
+To use this extension, add the `io.quarkiverse:quarkus-pact-provider` extension first to your build file.
+Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
+
+For instance, with Maven, add the following dependency to your POM file:
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+    <groupId>io.quarkiverse</groupId>
+    <artifactId>quarkus-pact-consumer</artifactId>
+    <version>{project-version}</version>
+    <scope>test</scope>
+</dependency>
+----
+
+== Example usage
+
+Use Pact as you https://docs.pact.io/implementation_guides/jvm/provider/junit5[normally would].
+Remember that your consumer tests should be testing your application's code, not the behaviour of the Pact-provided mock.
+
+For example, a simple consumer test for REST endpoints would look like this:
+
+[source,java]
+----
+include::{examples-dir}/consumer/ConsumerTest.java[tag=include]
+----
+
+<1> Add `@Consumer` annotations to the class, along with metadata about who the consumer is, and what provider is being used.
+<2> The consumer under test.
+<3> This defines what the body of the request could look like; we are generic and say it can be anything that meets the schema.
+We could be stricter and put more expectations on what the consumer sends.
+<4> We use the Pact DSL to define what the provider should return, given the request.
+<5> Here we define our mock, which is also our expectations for the provider.
+There is no need to verify these in this test; instead, the provider test will verify them.
+<6> This test is realistic (in a simplified way) of how a consumer test might look.
+<7> We have hardcoded the mock response, so the colour parameter we pass in is irrelevant (for this particular test) It tests how the consumer under test uses what the mock passes back, *not* the mock itself.
+
+[[extension-configuration-reference]]
+== Extension Configuration Reference
+
+For the moment, Pact needs to be configured by the normal https://docs.pact.io/implementation_guides/jvm/docs/system-properties[Pact system properties].
+
+== Known limitations
+
+consumer tests cannot directly access pact MockServer in test methods in dev mode #73 opened Feb 10, 2023 by holly-cummins @TestProfile does not work in dev mode
+
+== Samples and resources
+
+- https://docs.pact.io/[Introduction to Pact]
+- How to use Pact's https://docs.pact.io/implementation_guides/jvm[Java library]
+- https://github.com/edeandrea/pact-quarkus-wookie-carpet-demo[Sample application showing Pact testing with Quarkus]
+- https://developers.redhat.com/author/eric-deandrea[Eric Deandrea] and https://hollycummins.com[Holly Cummins]
+recently spoke about contract testing with Pact. https://www.youtube.com/watch?v=vYwkDPrzqV8[Watch the replay] and https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/[view the slides] if you'd like to learn more about contract testing.
+- The https://github.com/quarkusio/quarkus-super-heroes[Quarkus Superheroes sample] includes Pact tests

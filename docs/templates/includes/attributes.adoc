@@ -1,3 +1,4 @@
 :project-version: ${release.current-version}
+:pact-version: ${pact.version}
 
 :examples-dir: ./../examples/
