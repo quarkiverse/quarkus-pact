@@ -1,0 +1,8 @@
+== Pact
+include::./includes/attributes.adoc[]
+
+https://pact.io/[Pact] is a polyglot contract testing framework.
+This set of extensions ensures Pact JVM libraries works well with Quarkus applications, including with continuous testing.
+They are based on version {pact-version} of the Pact JVM JUnit 5 library.
+
+You can find the full set of extensions and documentation for each of them in the navigation on the left.
