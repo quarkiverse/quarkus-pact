@@ -57,13 +57,8 @@ For the moment, Pact needs to be configured by the normal https://docs.pact.io/i
 
 == Known limitations
 
-consumer tests cannot directly access pact MockServer in test methods in dev mode #73 opened Feb 10, 2023 by holly-cummins @TestProfile does not work in dev mode
+- Consumer tests cannot directly access the Pact `MockServer` when continuous testing is being used (https://github.com/quarkiverse/quarkus-pact/issues/73[GitHub issue])
+- `@TestProfile` does not work in dev mode (https://github.com/quarkiverse/quarkus-pact/issues/58[GitHub issue])
 
-== Samples and resources
+include::./includes/resources.adoc[]
 
-- https://docs.pact.io/[Introduction to Pact]
-- How to use Pact's https://docs.pact.io/implementation_guides/jvm[Java library]
-- https://github.com/edeandrea/pact-quarkus-wookie-carpet-demo[Sample application showing Pact testing with Quarkus]
-- https://developers.redhat.com/author/eric-deandrea[Eric Deandrea] and https://hollycummins.com[Holly Cummins]
-recently spoke about contract testing with Pact. https://www.youtube.com/watch?v=vYwkDPrzqV8[Watch the replay] and https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/[view the slides] if you'd like to learn more about contract testing.
-- The https://github.com/quarkusio/quarkus-super-heroes[Quarkus Superheroes sample] includes Pact tests
