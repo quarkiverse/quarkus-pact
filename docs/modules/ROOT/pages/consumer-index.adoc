@@ -10,11 +10,6 @@ It is based on version {pact-version} of the Pact JVM JUnit 5 library.
 To use this extension, add the `io.quarkiverse:quarkus-pact-consumer` extension first to your build file.
 Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
 
-== Installation
-
-To use this extension, add the `io.quarkiverse:quarkus-pact-provider` extension first to your build file.
-Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
-
 For instance, with Maven, add the following dependency to your POM file:
 
 [source,xml,subs=attributes+]
