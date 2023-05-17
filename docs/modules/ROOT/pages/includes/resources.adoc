@@ -1,0 +1,8 @@
+== Samples and resources
+
+- https://docs.pact.io/[Introduction to Pact]
+- How to use Pact's https://docs.pact.io/implementation_guides/jvm[Java library]
+- https://github.com/edeandrea/pact-quarkus-wookie-carpet-demo[Sample application showing Pact testing with Quarkus]
+- https://developers.redhat.com/author/eric-deandrea[Eric Deandrea] and https://hollycummins.com[Holly Cummins]
+recently spoke about contract testing with Pact. https://hollycummins.com/modern-microservices-testing-pitfalls-devoxxuk/[Watch the replay] and https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx-uk/[view the slides] if you'd like to learn more about contract testing and see the Pact extensions in action.
+- The https://github.com/quarkusio/quarkus-super-heroes[Quarkus Superheroes sample] includes Pact tests

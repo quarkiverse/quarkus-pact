@@ -45,12 +45,6 @@ For the moment, Pact needs to be configured by the normal https://docs.pact.io/i
 
 - `@State` methods do not not have access to the CDI context (https://github.com/quarkiverse/quarkus-pact/issues/2[GitHub issue])
 - When changing the code of classes with a `@TestTemplate`, continuous testing may not automatically retrigger (https://github.com/quarkusio/quarkus/pull/33047[Fix PR])
+- `@TestProfile` does not work in dev mode (https://github.com/quarkiverse/quarkus-pact/issues/58[GitHub issue])
 
-== Samples and resources
-
-- https://docs.pact.io/[Introduction to Pact]
-- How to use Pact's https://docs.pact.io/implementation_guides/jvm[Java library]
-- https://github.com/edeandrea/pact-quarkus-wookie-carpet-demo[Sample application showing Pact testing with Quarkus]
-- https://developers.redhat.com/author/eric-deandrea[Eric Deandrea] and https://hollycummins.com[Holly Cummins]
-recently spoke about contract testing with Pact. https://www.youtube.com/watch?v=vYwkDPrzqV8[Watch the replay] and https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/[view the slides] if you'd like to learn more about contract testing.
-- The https://github.com/quarkusio/quarkus-super-heroes[Quarkus Superheroes sample] includes Pact tests
+include::./includes/resources.adoc[]
