@@ -1,12 +1,9 @@
-import static au.com.dius.pact.consumer.dsl.LambdaDsl.newJsonBody;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.inject.Inject;
-import jakarta.ws.rs.HttpMethod;
-import jakarta.ws.rs.core.Response.Status;
+import javax.inject.Inject;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,10 +21,10 @@ import io.quarkus.test.junit.QuarkusTest;
 @ExtendWith(PactConsumerTestExt.class)
 @PactTestFor(providerName = "farm", port = "8085")
 @PactDirectory("target/pacts")
-@QuarkusTest // Needed to enable dependency injection of the rest client
+@QuarkusTest // <2>
 public class ConsumerTest {
 
-    // <2>
+    // <3>
     @Inject
     Knitter knitter;
 
@@ -36,15 +33,18 @@ public class ConsumerTest {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
 
-        var requestBody = newJsonBody(body -> body.stringType("colour").numberType("orderNumber")).build(); // <3>
-
-        var woolResponseBody = newJsonBody(body -> body.stringValue("colour", "white")).build(); // <4>
-
-        // <5>
-        return builder.uponReceiving("post request").path("/wool/order").headers(headers).method(HttpMethod.POST)
-                .body(requestBody).willRespondWith().status(Status.OK.getStatusCode()).headers(headers).body(woolResponseBody)
+        return builder.given("test GET") //<4>
+                .uponReceiving("GET REQUEST")
+                .path("/alpaca")
+                .method("GET")
+                .willRespondWith()
+                .status(200)
+                .headers(headers)
+                .body(" {\n" + // <5>
+                        "      \"colour\": \"black\",\n" +
+                        "          \"name\": \"floppy\"\n" +
+                        "        }")
                 .toPact(V4Pact.class);
-
     }
 
     @Test

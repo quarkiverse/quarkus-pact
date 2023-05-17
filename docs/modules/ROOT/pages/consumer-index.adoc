@@ -24,9 +24,11 @@ For instance, with Maven, add the following dependency to your POM file:
     <groupId>io.quarkiverse</groupId>
     <artifactId>quarkus-pact-consumer</artifactId>
     <version>{project-version}</version>
-    <scope>test</scope>
+    <scope>provided</scope>
 </dependency>
 ----
+
+Note the `provided` scope, rather than `test` or default. This is needed for the tests to pass in continuous testing mode.
 
 == Example usage
 
@@ -41,9 +43,8 @@ include::{examples-dir}/consumer/ConsumerTest.java[tag=include]
 ----
 
 <1> Add `@Consumer` annotations to the class, along with metadata about who the consumer is, and what provider is being used.
-<2> The consumer under test.
-<3> This defines what the body of the request could look like; we are generic and say it can be anything that meets the schema.
-We could be stricter and put more expectations on what the consumer sends.
+<2> Needed to enable dependency injection of the rest client.
+<3> The consumer under test.
 <4> We use the Pact DSL to define what the provider should return, given the request.
 <5> Here we define our mock, which is also our expectations for the provider.
 There is no need to verify these in this test; instead, the provider test will verify them.
@@ -57,8 +58,9 @@ For the moment, Pact needs to be configured by the normal https://docs.pact.io/i
 
 == Known limitations
 
-- Consumer tests cannot directly access the Pact `MockServer` when continuous testing is being used (https://github.com/quarkiverse/quarkus-pact/issues/73[GitHub issue])
+- If continuous testing is being used, the dependency scope cannot be `test`. The `provided` scope is a good alternative.
 - `@TestProfile` does not work in dev mode (https://github.com/quarkiverse/quarkus-pact/issues/58[GitHub issue])
+- A harmless `java.lang.NoClassDefFoundError: org/apache/hc/client5/http/fluent/Request` message will be produced if https://docs.pact.io/telemetry[Pact tracking] is enabled (https://github.com/quarkiverse/quarkus-pact/issues/57[GitHub issue])
 
 include::./includes/resources.adoc[]
 
