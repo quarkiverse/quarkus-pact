@@ -2,7 +2,6 @@
 
 include::./includes/attributes.adoc[]
 
-https://pact.io/[Pact] is a polyglot contract testing framework.
 This extension ensures Pact consumer libraries works well with Quarkus applications, including with continuous testing.
 It is based on version {pact-version} of the Pact JVM JUnit 5 library.
 
