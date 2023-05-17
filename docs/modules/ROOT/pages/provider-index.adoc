@@ -17,9 +17,11 @@ Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
     <groupId>io.quarkiverse</groupId>
     <artifactId>quarkus-pact-provider</artifactId>
     <version>{project-version}</version>
-    <scope>test</scope>
+    <scope>provided</scope>
 </dependency>
 ----
+
+Note the `provided` scope, rather than `test` or default. This is needed for the tests to pass in continuous testing mode.
 
 == Example usage
 
@@ -43,8 +45,10 @@ For the moment, Pact needs to be configured by the normal https://docs.pact.io/i
 
 == Known limitations
 
+- If continuous testing is being used, the dependency scope cannot be `test`. The `provided` scope is a good alternative.ps
 - `@State` methods do not not have access to the CDI context (https://github.com/quarkiverse/quarkus-pact/issues/2[GitHub issue])
 - When changing the code of classes with a `@TestTemplate`, continuous testing may not automatically retrigger (https://github.com/quarkusio/quarkus/pull/33047[Fix PR])
 - `@TestProfile` does not work in dev mode (https://github.com/quarkiverse/quarkus-pact/issues/58[GitHub issue])
+- A harmless `java.lang.NoClassDefFoundError: org/apache/hc/client5/http/fluent/Request` message will be produced if https://docs.pact.io/telemetry[Pact tracking] is enabled (https://github.com/quarkiverse/quarkus-pact/issues/57[GitHub issue])
 
 include::./includes/resources.adoc[]
