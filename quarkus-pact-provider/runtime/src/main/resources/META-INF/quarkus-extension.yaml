@@ -6,4 +6,5 @@ metadata:
   #  guide: https://quarkiverse.github.io/quarkiverse-docs/pact-provider/dev/
   categories:
     - "testing"
+  guide: https://quarkiverse.github.io/quarkiverse-docs/quarkus-pact/dev/provider-index.html
   status: "experimental"

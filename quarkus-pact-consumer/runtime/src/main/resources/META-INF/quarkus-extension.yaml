@@ -6,4 +6,5 @@ metadata:
   #  guide: https://quarkiverse.github.io/quarkiverse-docs/pact-consumer/dev/
   categories:
     - "testing"
+  guide: "https://quarkiverse.github.io/quarkiverse-docs/quarkus-pact/dev/consumer-index.html"
   status: "experimental"
