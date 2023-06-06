@@ -16,6 +16,11 @@
     <module>quarkus-pact-consumer</module>
     <module>docs</module>
   </modules>
+  <scm>
+    <connection>:git:git@github.com:quarkiverse/quarkus-pact.git</connection>
+    <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-pact.git</developerConnection>
+    <url>https://github.com/quarkiverse/quarkus-pact</url>
+  </scm>
   <properties>
     <quarkus.version>3.1.2.Final</quarkus.version>
     <pact.version>4.5.6</pact.version>
@@ -24,7 +29,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
