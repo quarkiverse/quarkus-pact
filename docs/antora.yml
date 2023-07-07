@@ -1,5 +1,5 @@
 name: quarkus-pact
-title: Quarkus Pact
+title: Pact
 version: dev
 nav:
   - modules/ROOT/nav.adoc
