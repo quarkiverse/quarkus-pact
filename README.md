@@ -61,6 +61,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://hollycummins.com"><img src="https://avatars.githubusercontent.com/u/11509290?v=4?s=100" width="100px;" alt="Holly Cummins"/><br /><sub><b>Holly Cummins</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-pact/commits?author=holly-cummins" title="Code">💻</a> <a href="#maintenance-holly-cummins" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/michalvavrik"><img src="https://avatars.githubusercontent.com/u/43821672?v=4?s=100" width="100px;" alt="Michal Vavřík"/><br /><sub><b>Michal Vavřík</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-pact/commits?author=michalvavrik" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://stackoverflow.com/users/1997376/nicolas-filotto"><img src="https://avatars.githubusercontent.com/u/1618116?v=4?s=100" width="100px;" alt="Nicolas Filotto"/><br /><sub><b>Nicolas Filotto</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-pact/commits?author=essobedo" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
