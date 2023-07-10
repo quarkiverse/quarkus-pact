@@ -31,6 +31,7 @@
         <version>${quarkus.version}</version>
         <configuration>
           <parentFirstArtifacts>
+            <parentFirstArtifact>org.apache.groovy:groovy</parentFirstArtifact>
             <parentFirstArtifact>au.com.dius.pact.provider:junit5</parentFirstArtifact>
             <parentFirstArtifact>org.jetbrains.kotlin:kotlin-stdlib-jdk8</parentFirstArtifact>
             <parentFirstArtifact>org.jetbrains.kotlin:kotlin-stdlib-jdk7</parentFirstArtifact>
