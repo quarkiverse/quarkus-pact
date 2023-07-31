@@ -1,5 +1,5 @@
 name: Pact consumer
-description: Support for running a pact consumer in Quarkus, including in Quarkus dev mode.
+description: Support for running a Pact consumer in Quarkus, including in Quarkus dev mode.
 metadata:
   keywords:
     - contract-testing, pact

@@ -1,5 +1,5 @@
 name: Pact Provider
-description: Support for running a pact provider in Quarkus, including in Quarkus dev mode.
+description: Support for running a Pact provider in Quarkus, including in Quarkus dev mode.
 metadata:
   keywords:
     - contract-testing, pact
