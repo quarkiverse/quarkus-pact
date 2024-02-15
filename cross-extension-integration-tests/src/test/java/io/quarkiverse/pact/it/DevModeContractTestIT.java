@@ -13,7 +13,6 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
 import io.quarkus.maven.it.RunAndCheckMojoTestBase;
 import io.quarkus.maven.it.continuoustesting.ContinuousTestingMavenTestUtils;
-import io.quarkus.test.devmode.util.DevModeTestUtils;
 
 /**
  * Because Pact uses Kotlin under the covers, we see different behaviour
@@ -36,12 +35,12 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
             throws MavenInvocationException, FileNotFoundException {
         run(performCompile, options);
 
-        String resp = DevModeTestUtils.getHttpResponse();
+        String resp = devModeClient.getHttpResponse();
 
         assertThat(resp).containsIgnoringCase("ready").containsIgnoringCase("application")
                 .containsIgnoringCase("1.0-SNAPSHOT");
 
-        String json = DevModeTestUtils.getHttpResponse("/alpaca");
+        String json = devModeClient.getHttpResponse("/alpaca");
         //Minimal sense check, the tests do the heavy validation
         assertThat(json).containsIgnoringCase("colour");
     }
@@ -55,7 +54,7 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
         await()
                 .pollDelay(100, TimeUnit.MILLISECONDS)
                 .atMost(5, TimeUnit.SECONDS)
-                .until(() -> DevModeTestUtils.getHttpResponse("/alpaca").startsWith("{"));
+                .until(() -> devModeClient.getHttpResponse("/alpaca").startsWith("{"));
 
         ContinuousTestingMavenTestUtils testingTestUtils = new ContinuousTestingMavenTestUtils();
         ContinuousTestingMavenTestUtils.TestStatus results = testingTestUtils.waitForNextCompletion();

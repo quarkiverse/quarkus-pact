@@ -16,7 +16,6 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 
 import io.quarkus.maven.it.RunAndCheckMojoTestBase;
 import io.quarkus.maven.it.continuoustesting.ContinuousTestingMavenTestUtils;
-import io.quarkus.test.devmode.util.DevModeTestUtils;
 
 /**
  * Because Pact uses Kotlin under the covers, we see different behaviour
@@ -34,7 +33,7 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
             throws MavenInvocationException, FileNotFoundException {
         run(performCompile, options);
 
-        String resp = DevModeTestUtils.getHttpResponse();
+        String resp = devModeClient.getHttpResponse();
 
         assertThat(resp).containsIgnoringCase("ready").containsIgnoringCase("application")
                 .containsIgnoringCase("1.0-SNAPSHOT");
