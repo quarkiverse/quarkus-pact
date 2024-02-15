@@ -4,7 +4,7 @@
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
     <artifactId>quarkus-pact-provider-parent</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2.0</version>
   </parent>
   <artifactId>quarkus-pact-provider-deployment</artifactId>
   <name>Quarkus Pact Provider - Deployment</name>
