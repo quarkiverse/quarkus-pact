@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.pact</groupId>
@@ -41,7 +42,7 @@
             <parentFirstArtifact>org.jetbrains:annotations</parentFirstArtifact>
             <parentFirstArtifact>au.com.dius.pact:provider</parentFirstArtifact>
             <parentFirstArtifact>au.com.dius.pact.core:support</parentFirstArtifact>
-            <parentFirstArtifact>io.github.microutils:kotlin-logging-jvm</parentFirstArtifact>
+            <parentFirstArtifact>io.github.oshai:kotlin-logging-jvm</parentFirstArtifact>
             <parentFirstArtifact>com.michael-bull.kotlin-result:kotlin-result-jvm</parentFirstArtifact>
             <parentFirstArtifact>io.ktor:ktor-http-jvm</parentFirstArtifact>
             <!-- Here we go back into Java code from the Kotlin code -->
@@ -57,8 +58,11 @@
             <parentFirstArtifact>com.github.zafarkhaja:java-semver</parentFirstArtifact>
             <parentFirstArtifact>io.github.java-diff-utils:java-diff-utils</parentFirstArtifact>
             <parentFirstArtifact>org.apache.commons:commons-text</parentFirstArtifact>
+            <parentFirstArtifact>commons-io:commons-io</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.httpcomponents.core5:httpcore5</parentFirstArtifact>
+            <parentFirstArtifact>org.apache.httpcomponents.core5:httpcore5-h2</parentFirstArtifact>
             <!-- This is not needed for basic function, but it resolves a stack trace in continuous testing
-            that happens when PACT_DO_NOT_TRACK is not set to true -->
+             that happens when PACT_DO_NOT_TRACK is not set to true -->
             <parentFirstArtifact>org.apache.httpcomponents.client5:httpclient5-fluent</parentFirstArtifact>
           </parentFirstArtifacts>
         </configuration>
