@@ -16,4 +16,4 @@ updates:
     schedule:
       interval: daily
     labels:
-      - area/infra
+      - infra
