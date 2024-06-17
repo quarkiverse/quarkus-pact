@@ -24,7 +24,7 @@
   </scm>
   <properties>
     <quarkus.version>3.7.0</quarkus.version>
-    <pact.version>4.6.7</pact.version>
+    <pact.version>4.6.10</pact.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
