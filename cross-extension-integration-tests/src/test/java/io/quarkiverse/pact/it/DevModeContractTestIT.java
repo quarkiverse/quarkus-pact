@@ -73,7 +73,7 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
         //running at once, if they add default to 75% of total mem we can easily run out
         //of physical memory as they will consume way more than what they need instead of
         //just running GC
-        args.add("-Djvm.args='-Xmx140m'");
+        args.add("-Djvm.args='-Xmx160m'");
         running.execute(args, Map.of());
     }
 
