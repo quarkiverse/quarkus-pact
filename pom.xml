@@ -8,7 +8,7 @@
   </parent>
   <groupId>io.quarkiverse.pact</groupId>
   <artifactId>quarkus-pact-parent</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.4.2</version>
   <packaging>pom</packaging>
   <name>Quarkus - Pact - Parent</name>
   <modules>
@@ -20,7 +20,7 @@
     <connection>scm:git:git@github.com:quarkiverse/quarkus-pact.git</connection>
     <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-pact.git</developerConnection>
     <url>https://github.com/quarkiverse/quarkus-pact</url>
-    <tag>HEAD</tag>
+    <tag>1.4.2</tag>
   </scm>
   <properties>
     <quarkus.version>3.7.0</quarkus.version>
