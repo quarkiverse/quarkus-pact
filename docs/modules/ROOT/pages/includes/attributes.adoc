@@ -1,4 +1,4 @@
-:project-version: 1.4.2
-:pact-version: 4.6.10
+:project-version: 1.5.0
+:pact-version: 4.6.11
 
 :examples-dir: ./../examples/
