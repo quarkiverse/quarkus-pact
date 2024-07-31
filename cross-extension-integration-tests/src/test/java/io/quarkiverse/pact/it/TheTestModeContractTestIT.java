@@ -75,7 +75,7 @@ public class TheTestModeContractTestIT extends RunAndCheckMojoTestBase {
         TestModeContinuousTestingMavenTestUtils testingTestUtils = new TestModeContinuousTestingMavenTestUtils(running);
 
         ContinuousTestingMavenTestUtils.TestStatus results = testingTestUtils.waitForNextCompletion();
-        Assertions.assertEquals(6, results.getTestsPassed());
+        Assertions.assertEquals(7, results.getTestsPassed());
         Assertions.assertEquals(0, results.getTestsFailed());
 
     }
