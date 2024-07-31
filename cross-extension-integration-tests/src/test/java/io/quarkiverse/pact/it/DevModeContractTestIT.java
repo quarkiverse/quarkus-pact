@@ -109,7 +109,7 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
 
         ContinuousTestingMavenTestUtils testingTestUtils = new ContinuousTestingMavenTestUtils();
         ContinuousTestingMavenTestUtils.TestStatus results = testingTestUtils.waitForNextCompletion();
-        Assertions.assertEquals(6, results.getTestsPassed());
+        Assertions.assertEquals(7, results.getTestsPassed());
         Assertions.assertEquals(0, results.getTestsFailed());
 
     }

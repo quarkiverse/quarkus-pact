@@ -52,7 +52,7 @@ public class DevModeContractTestIT extends RunAndCheckMojoTestBase {
         ContinuousTestingMavenTestUtils.TestStatus results = testingTestUtils.waitForNextCompletion();
         // This is a bit brittle when we add tests, but failures are often so catastrophic they're not even reported as failures,
         // so we need to check the pass count explicitly
-        Assertions.assertEquals(4, results.getTestsPassed());
+        Assertions.assertEquals(5, results.getTestsPassed());
         Assertions.assertEquals(0, results.getTestsFailed());
 
         // Now confirm a pact file got written by the pact consumer
