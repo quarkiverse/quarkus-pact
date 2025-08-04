@@ -14,7 +14,7 @@ Choose a 1.x version for Quarkus 3, and a 0.x version for Quarkus 2.
 [source,xml,subs=attributes+]
 ----
 <dependency>
-    <groupId>io.quarkiverse</groupId>
+    <groupId>io.quarkiverse.pact</groupId>
     <artifactId>quarkus-pact-provider</artifactId>
     <version>{project-version}</version>
     <scope>test</scope>
