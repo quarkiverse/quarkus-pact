@@ -15,7 +15,7 @@ For instance, with Maven, add the following dependency to your POM file:
 [source,xml,subs=attributes+]
 ----
 <dependency>
-    <groupId>io.quarkiverse</groupId>
+    <groupId>io.quarkiverse.pact</groupId>
     <artifactId>quarkus-pact-consumer</artifactId>
     <version>{project-version}</version>
     <scope>test</scope>
